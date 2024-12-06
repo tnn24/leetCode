@@ -21,6 +21,7 @@
         <version-allure-common>2.29.0</version-allure-common>
         <version-allure-testng>2.29.0</version-allure-testng>
         <version-allure-plugin>2.15.2</version-allure-plugin>
+        <version-compiler-plugin>3.13.0</version-compiler-plugin>
         <version-surefire-plugin>3.5.2</version-surefire-plugin>
         <version-aspectj>1.9.20.1</version-aspectj>
     </properties>
@@ -86,6 +87,20 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version-compiler-plugin}</version>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${version-lombok}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
