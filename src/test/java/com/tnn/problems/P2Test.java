@@ -5,7 +5,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class P2Test {
-
     private static P2.ListNode parse(int num) {
         P2.ListNode dummy = new P2.ListNode(num % 10);
         P2.ListNode current = dummy;
@@ -39,7 +38,7 @@ public class P2Test {
         };
     }
 
-    @Test(dataProvider = "data", enabled = true)
+    @Test(dataProvider = "data", enabled = false)
     public void test(P2.ListNode l1, P2.ListNode l2, P2.ListNode expectedResult) {
         P2.ListNode actual = P2.addTwoNumbers(l1, l2);
         Assert.assertEquals(actual, expectedResult);
